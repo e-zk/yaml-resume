@@ -1,0 +1,56 @@
+contact:
+  first name: Steve
+  last name: Minecraft
+  mob: '0222 333 444'
+  email: minecraft@microsoft.com
+  website: minecraft.net
+  location: New York, New York
+
+experience:
+  - role: Something Amazing
+    org: Mojang
+    start: 2023
+    end: Present
+    summary:
+      - "Basically set up the entire stuff that Mincraft is based on."
+      - "Java and that."
+      - "Overall just doing really really cool shit for Mojang dot com."
+  - role: Software Developer
+    org: MichealSoft
+    start: 2019
+    end: 2021
+    summary:
+      - "Set up the company now known as Microsoft (previously, MichealSoft)."
+      
+  - role: Warehouse Worker
+    org: Wallshart
+    start: 2017
+    end: 2020
+    summary:
+      - "Casual position."
+      - "Some cash for highschool stuff."
+
+education:
+  - title: Bachelor of IT
+    institution: Bond University
+    desc: Major in Computer Science. Lorem ipsum odor amet, consectetuer adipiscing elit.
+    start: 2019
+    end: 2021
+  - title: Diploma of Art Studies
+    institution: Lorem Ipsum School of Modern Art
+    desc: Id aliquet conubia ad augue ornare ac imperdiet vitae feugiat.
+    start: Jan 2018
+    end: Nov 2018
+
+references:
+  - name: Alyx
+    org: Mojang
+    email: alyx@minecraft.net
+    phone: (+64) 646 323 161
+
+skills: |
+  Code: Go, Shell Scripting+Bash, HTML/CSS, Python, PHP, C, C#, JavaScript, Typescript, Java<br>
+  Tools/Software: Git, Unix-like Operating Systems (Linux, OpenBSD, FreeBSD)<br>
+
+extra: |
+  <p>Moar references available upon request.</p>
