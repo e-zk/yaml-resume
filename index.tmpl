@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width,initial-scale=1" name="viewport">
+<title>{{ .Contact.FirstName }} {{ .Contact.LastName }}</title>
+<style>
+:root {
+	--fg0: #000;
+	--fg1: #000;
+	--fg2: #000;
+	--fg4: #000;
+}
+*, div {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html {
+	font-family: "InterVariable","Inter",sans-serif;
+	font-size: 14px;
+	font-weight: 350;
+	line-height: calc(14px * 1.5);
+	color: var(--fg2);
+	-webkit-text-size-adjust: none;
+	height: 100%;
+}
+p { margin-block-start: 0.125rem; margin-block-end: 1rem } 
+a { color: inherit; text-decoration: none }
+b,strong { font-weight: 500; }
+h1,h2,h3,h4,h5,h6 {
+	font-family: "InterDisplay","Inter",sans-serif;
+	color: var(--fg0);
+	line-height: 1.2;
+	font-weight: 500;
+	font-size: 1rem;
+}
+h1 { font-weight: 700; font-size: 2rem }
+h2 { margin: 0.75rem 0; font-size: 1.25rem }
+h3 { margin: 0.5rem 0 0 0; color: var(--fg1); font-size: 1rem; }
+ul,ol { margin-block-start: 0.125rem; margin-block-end: 1rem; padding-inline-start: 1.5rem }
+li::marker { color: var(--fg1) }
+.gridp { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; padding: 0; }
+.gridp div h3 { margin: 0; }
+.gridp div { border: 2px dashed var(--fg4); padding: 1rem; border-radius: 1rem; }
+.gridp div p { margin-bottom: 0 }
+</style>
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+</head>
+<body>
+<header>
+{{ template "header" . }}
+</header>
+<main>
+
+{{ if .Experience }}
+<h2>Experience</h2>
+{{ range .Experience }}
+<h3>{{.Role}}&nbsp;@&nbsp;{{.Org}}&nbsp;&bullet;&nbsp;<span class="startend">{{.Start}}&nbsp;&rarr;&nbsp;{{.End}}</span></h3>
+<ul>
+{{ range .Summary }}
+<li>{{.}}</li>
+{{end}}
+</ul>
+{{end}}
+{{end}}
+
+{{ if .Education }}
+<h2>Education</h2>
+{{ range .Education }}
+<h3>{{.Title}}&nbsp;@&nbsp;{{.Institution}}&nbsp;&bullet;&nbsp;<span class="startend">{{.Start}}&nbsp;&rarr;&nbsp;{{.End}}</span></h3>
+<p>{{.Description}}</p>
+{{end}}
+{{end}}
+
+{{ if .References }}
+<h2>References</h2>
+<div class="gridp">
+{{ range .References }}
+<div>
+<h3>{{.Fullname}}&nbsp;@&nbsp;{{.Org}}</h3>
+<p><a href="mailto:{{.Email}}">{{.Email}}</a><br>{{.Phone}}</p>
+</div>
+{{end}}
+</div>
+{{end}}
+
+{{ if .Skills }}
+<h2>Skills</h2>
+<p>
+{{.Skills}}
+</p>
+{{end}}
+
+{{ if .Extra }}
+{{.Extra}}
+{{end}}
+
+</main>
+</body>
+</html>

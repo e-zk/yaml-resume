@@ -1,0 +1,7 @@
+{{ define "header" }}
+<center>
+<h1>{{ .Contact.FirstName }} {{ .Contact.LastName }}</h1>
+<p>{{if .Contact.Mob}}{{ .Contact.Mob }}&nbsp;&bullet;&nbsp;{{end}}
+<a href="mailto:{{.Contact.Email}}">{{ .Contact.Email }}</a>{{if .Contact.Web}}&nbsp;&bullet;&nbsp;<a href="https://{{.Contact.Web}}">{{end}}{{ .Contact.Web }}{{if .Contact.Location}}&nbsp;&bullet;&nbsp;{{.Contact.Location}}{{end}}</a></p>
+</center>
+{{end}}
