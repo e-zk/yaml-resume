@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"html/template"
 	"log"
 	"os"
@@ -53,8 +54,11 @@ type Config struct {
 }
 
 func main() {
+	conf := flag.String("f", "config.yml", "config file")
+	flag.Parse()
+
 	// read config file content
-	cf, err := os.ReadFile("config.yml")
+	cf, err := os.ReadFile(*conf)
 	if err != nil {
 		log.Fatal(err)
 	}
